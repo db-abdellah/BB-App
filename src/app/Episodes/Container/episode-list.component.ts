@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Episode, Season } from 'src/assets/episodes';
 import { EpisodeService } from '../episodes-service.service';
@@ -17,7 +18,7 @@ export class EpisodeListComponent implements OnInit {
     this.episodeService.getAllEpisodes().subscribe((episodes) => {
       this.episodesList = episodes;
       this.sortEpisodesBySeason();
-    });
+    },this.logError);
     
   }
   sortEpisodesBySeason() {
@@ -34,4 +35,6 @@ export class EpisodeListComponent implements OnInit {
   showSeason(seasonNumber:number){
     this.showedSeason=seasonNumber;
   }
+  logError = (error: HttpErrorResponse) => console.error(error);
+
 }

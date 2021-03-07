@@ -1,20 +1,31 @@
-<div class="list-of-seasons">
-  <div *ngFor="let season of seasons">
-    <h2
-      class="episode-title"
-      [ngClass]="{ 'selected-season': season.number === showedSeason }"
-      (click)="showSeason(season.number)"
-    >
-      Season {{ season.number }}
-    </h2>
-    <div class="Episodes-list">
-      <div *ngIf="season.number == showedSeason">
-        <ul>
-          <li *ngFor="let episode of season.episodes">
-            <p>{{ episode.title }}</p>
-          </li>
-        </ul>
+<div *ngIf="seasons.length > 0">
+  <a id="head"></a>
+  <div class="list-of-seasons">
+    <div *ngFor="let season of seasons">
+      <h2
+        class="episode-title"
+        [ngClass]="{ 'selected-season': season.number === showedSeason }"
+        (click)="showSeason(season.number)"
+      >
+        <a href="./episodes#head"> Season {{ season.number }}</a>
+      </h2>
+
+      <div class="Episodes-list">
+        <div *ngIf="season.number == showedSeason">
+          <ul>
+            <li *ngFor="let episode of season.episodes">
+              <a class="hidden-link" href="./episodes/{{ episode.episode_id }}">
+                <p>{{ episode.episode_id }} - {{ episode.title }}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<img
+  *ngIf="seasons.length == 0"
+  class="loading-gif"
+  src="assets/loading.gif"
+/>

@@ -13,7 +13,7 @@ export class CharacterService {
   
   constructor(private http: HttpClient) {}
   //Url = 'http://localhost:3000/Characters';
-  Url = 'https://breakingbadapi.com/api/characters?category=Breaking+Bad';
+  Url = 'https://breakingbadapi.com/api/characters';
   
   options = {
     headers: new Headers({
@@ -22,7 +22,13 @@ export class CharacterService {
   };
 
   public getAllCharacters(): Observable<Character[]> {
-    return this.http.get<Character[]>(this.Url);
+    return this.http.get<Character[]>(this.Url+"?category=Breaking+Bad");
+  }
+  public getCharacterById(id): Observable<Character[]> {
+    return this.http.get<Character[]>(this.Url+"/"+id);
+  }
+  public getCharacterByName(name:string): Observable<Character[]> {
+    return this.http.get<Character[]>(this.Url+"?name="+name.replace(" ","+"));
   }
 
   ngOnInit(): void {};

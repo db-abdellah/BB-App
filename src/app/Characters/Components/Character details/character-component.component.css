@@ -1,0 +1,39 @@
+.character{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+p {
+  margin: 15px;
+}
+
+div.polaroid {
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  margin: 10px;
+  height: 250px;
+
+}
+
+img {
+    border-radius: 5px;
+    height: 250px;
+    width: 300px;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.character-details {
+    padding: 20px;
+  padding: 10px 20px;
+}
+
+@media (max-width:1000px){
+  .character{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -7,7 +7,7 @@ import { Episode } from 'src/assets/episodes';
 export class EpisodeService {
   constructor(private http: HttpClient) {}
   //Url = 'http://localhost:3000/Quotes';
-  Url = 'https://breakingbadapi.com/api/episodes?series=Breaking+Bad';
+  Url = 'https://breakingbadapi.com/api/episodes';
 
   options = {
     headers: new Headers({
@@ -16,7 +16,10 @@ export class EpisodeService {
   };
 
   public getAllEpisodes(): Observable<Episode[]> {
-    return this.http.get<Episode[]>(this.Url);
+    return this.http.get<Episode[]>(this.Url+"?series=Breaking+Bad");
+  }
+  public getEpisodeById(id): Observable<Episode[]> {
+    return this.http.get<Episode[]>(this.Url+"/"+id);
   }
 
   ngOnInit(): void {}

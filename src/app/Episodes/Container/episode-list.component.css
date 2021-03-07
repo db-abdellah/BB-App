@@ -2,11 +2,6 @@
 margin-left: 50px;
 }
 
-.Episodes-list ul{
-
-    
-  list-style: decimal;
-}
 .list-of-seasons{
     margin-left: 50px;
 }
@@ -15,10 +10,13 @@ margin-left: 50px;
     cursor: pointer;
 }
 .selected-season{
-    padding-left: 20px;
-    color: #79b473;
+    text-align: center;
+    color: #197f17;
 }
 li{
     font-weight: 600;
     padding: 5px;
+}
+ul{
+    list-style: disc;
 }

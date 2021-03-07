@@ -1,4 +1,21 @@
-<div class="episode">
-    <h6>{{episode.title}}</h6>
-    
+<div *ngIf="episode[0]" class="episode">
+  <h1 class="title">{{ episode[0].title }}</h1>
+  <div style="padding: 50px;">
+    <p><b>Episode Air Date: </b>{{ episode[0].air_date | date }}</p>
+    <p><b>Season: </b>{{ episode[0].season }}</p>
+    <p><b>Episode Number: </b>{{ episode[0].episode_id }}</p>
+    <p><b>Characters: </b></p>
+    <ul>
+      <li *ngFor="let character of episode[0].characters">
+        <a  href="./characters/name/{{character}}">{{ character }}</a>
+      </li>
+    </ul>
+    <button (click)="goBack()">Go Back</button>
+  </div>
 </div>
+<img
+  *ngIf="!episode[0]"
+  class="loading-gif"
+  src="assets/loading.gif"
+/>
+

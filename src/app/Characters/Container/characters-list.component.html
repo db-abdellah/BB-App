@@ -1,7 +1,13 @@
 <h1 class="title">Characters List:</h1>
-<div class="character-list">
-    
-  <div *ngFor="let character of charactersList">
-    <character-component [character]="character"></character-component>
+<div *ngIf="charactersList.length > 0">
+  <div class="character-list">
+    <div *ngFor="let character of charactersList">
+      <character-component [character]="character"></character-component>
+    </div>
   </div>
 </div>
+<img
+  *ngIf="charactersList.length == 0"
+  class="loading-gif"
+  src="assets/loading.gif"
+/>

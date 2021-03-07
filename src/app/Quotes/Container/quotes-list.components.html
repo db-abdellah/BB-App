@@ -1,4 +1,4 @@
-<div class="quote-list">
+<div *ngIf="quotesList.length>0" class="quote-list">
   <h1 class="title">Breaking Bad's Most Memorable Quotes:</h1>
   <br>
   
@@ -6,3 +6,8 @@
     <quote-componenet [quote]="quote"></quote-componenet>
   </div>
 </div>
+<img
+  *ngIf="quotesList.length==0"
+  class="loading-gif"
+  src="assets/loading.gif"
+/>

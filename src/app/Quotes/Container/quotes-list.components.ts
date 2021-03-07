@@ -11,7 +11,7 @@ import { QuoteService } from '../quote-service.service';
 })
 
 export class QuotesList implements OnInit {
-    public quotesList;
+    public quotesList = [];
     constructor(private quoteService:QuoteService) { }
 
     ngOnInit() { 

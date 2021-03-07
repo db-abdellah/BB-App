@@ -12,7 +12,7 @@ import { CharacterService } from '../character-service.service';
 
 export class CharactersList implements OnInit {
 
-    public charactersList:Character[];
+    public charactersList:Character[]=[];
 
     constructor(private characterService : CharacterService) { 
 

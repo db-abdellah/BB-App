@@ -1,0 +1,16 @@
+<div *ngIf="character.length>0" class="character">
+  <div class="polaroid">
+    <img alt="{{ character[0]?.name }}" src="{{ character[0]?.img }}" />
+  </div>
+  <div class="character-details">
+    <p><b>Name:</b> {{ character[0]?.name }}</p>
+    <p><b>Nickname:</b> {{ character[0]?.nickname }}</p>
+    <p><b>Portrayed by:</b> {{ character[0]?.portrayed }}</p>
+    <p><b>Occupation:</b> {{ character[0]?.occupation }}</p>
+    <p><b>Birthday:</b> {{ (character[0]?.birthday=="Unkown" ? (character[0]?.birthday | date): "Unkown")  }}</p>
+    <p><b>Status:</b> {{ character[0]?.status }}</p>
+  
+  </div>
+</div>
+<button (click)="goBack()">Go Back</button>
+<img *ngIf="character.length==0" class="loading-gif" src="assets/loading.gif">
