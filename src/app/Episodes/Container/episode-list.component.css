@@ -1,0 +1,24 @@
+.Episodes-list{
+margin-left: 50px;
+}
+
+.Episodes-list ul{
+
+    
+  list-style: decimal;
+}
+.list-of-seasons{
+    margin-left: 50px;
+}
+.episode-title:hover{
+    padding-left:20px ;
+    cursor: pointer;
+}
+.selected-season{
+    padding-left: 20px;
+    color: #79b473;
+}
+li{
+    font-weight: 600;
+    padding: 5px;
+}

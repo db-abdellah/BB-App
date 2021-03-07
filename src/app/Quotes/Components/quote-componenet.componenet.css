@@ -1,0 +1,14 @@
+.quote {
+  font-size: 16pt;
+  text-align: center;
+}
+p {
+  padding: 10px;
+}
+
+.author {
+  font-style: italic;
+  margin-right: 200px;
+  text-align: right;
+  color:#79b473;
+}
