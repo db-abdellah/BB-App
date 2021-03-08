@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Episode, Season } from 'src/assets/episodes';
 import { EpisodeService } from '../episodes-service.service';
 
@@ -13,9 +14,11 @@ export class EpisodeListComponent implements OnInit {
   public episodesList: Episode[];
   public seasons: Season[] = [];
   public showedSeason:number=1;
+  public episodeSubscription$: Subscription;
+
 
   ngOnInit() {
-    this.episodeService.getAllEpisodes().subscribe((episodes) => {
+    this.episodeSubscription$=this.episodeService.getAllEpisodes().subscribe((episodes) => {
       this.episodesList = episodes;
       this.sortEpisodesBySeason();
     },this.logError);
@@ -34,6 +37,9 @@ export class EpisodeListComponent implements OnInit {
 
   showSeason(seasonNumber:number){
     this.showedSeason=seasonNumber;
+  }
+  ngOnDestroy() {
+    this.episodeSubscription$.unsubscribe();
   }
   logError = (error: HttpErrorResponse) => console.error(error);
 

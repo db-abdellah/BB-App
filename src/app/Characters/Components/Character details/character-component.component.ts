@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Character } from 'src/assets/characters';
 import { CharacterService } from '../../character-service.service';
 import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { Location } from '@angular/common';
 })
 export class CharacterDetailsComponent implements OnInit {
   public character: Character[]=[];
+  public characterSubscription$: Subscription;
+
 
   constructor(
     private characterService: CharacterService,
@@ -22,17 +25,18 @@ export class CharacterDetailsComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
+
     
     
     if (id){
-      this.characterService.getCharacterById(id).subscribe((result) => {
+      this.characterSubscription$ =this.characterService.getCharacterById(id).subscribe((result) => {
         this.character = result;
       }, this.logError);}
       else {
         console.log(this.route.snapshot.url.toString().split(","));
         const name:string = this.route.snapshot.url.toString().split(",").pop().replace("%20"," ");
         console.log(this.route.snapshot.url.toString().split(","));
-        this.characterService.getCharacterByName(name).subscribe((result) => {
+        this.characterSubscription$=this.characterService.getCharacterByName(name).subscribe((result) => {
           this.character = result;
         }, this.logError);
       }
@@ -40,6 +44,10 @@ export class CharacterDetailsComponent implements OnInit {
   }
   goBack(){
     this.location.back();
+  }
+
+  ngOnDestroy() {
+    this.characterSubscription$.unsubscribe();
   }
   logError = (error: HttpErrorResponse) => console.error(error);
 }

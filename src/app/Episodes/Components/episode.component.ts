@@ -4,6 +4,7 @@ import { EpisodeService } from '../episodes-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'episode-component',
@@ -17,9 +18,11 @@ export class EpisodeComponent implements OnInit {
     private location: Location
   ) {}
   public episode:Episode[]=[] as Episode[];
+  public episodeSubscription$: Subscription;
+
   ngOnInit() :void{
     const id = +this.route.snapshot.paramMap.get('id');
-    this.episodeService.getEpisodeById(id).subscribe(
+    this.episodeSubscription$=this.episodeService.getEpisodeById(id).subscribe(
         (result)=>{
             this.episode=result;
             console.log(this.episode)
@@ -28,6 +31,9 @@ export class EpisodeComponent implements OnInit {
   }
   goBack(){
     this.location.back();
+  }
+  ngOnDestroy() {
+    this.episodeSubscription$.unsubscribe();
   }
   logError = (error: HttpErrorResponse) => console.error(error);
 

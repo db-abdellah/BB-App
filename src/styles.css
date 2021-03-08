@@ -141,8 +141,5 @@ h4 {
 }
 .loading-gif{
   height: 100px !important;
-  width: auto !important;
-  position: fixed !important;
-  left: 45% !important;
-  top: 45% !important;
+  margin-left: 45% !important;
 }
