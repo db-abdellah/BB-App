@@ -1,7 +1,11 @@
+<div class="search-container">
+  <input class="search-box" type="text" placeholder="Search..." name="Search"> 
+</div>
 <h1 class="title">Characters List:</h1>
-<div *ngIf="charactersList.length > 0">
+<div class="character-list-container" *ngIf="charactersList.length > 0">
+  
   <div class="character-list">
-    <div *ngFor="let character of charactersList">
+    <div  *ngFor="let character of charactersList">
       <character-component [character]="character"></character-component>
     </div>
   </div>

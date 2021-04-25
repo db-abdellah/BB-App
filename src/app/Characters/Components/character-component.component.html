@@ -1,17 +1,18 @@
-<a href="./characters/{{character.char_id}}">
-<div class="character">
-  
-  <div class="polaroid">
-    <img alt="{{ character.name }}" src="{{ character.img }}" />
-    <div class="overlay">
-    <div class="character-details">
-      <p><b>Name:</b> {{ character.name }}</p>
-      <p><b>Nickname:</b> {{ character.nickname }}</p>
-      <p><b>Portrayed by:</b> {{ character.portrayed }}</p>
-    </div>
+<a href="./characters/{{ character.char_id }}">
+  <div class="character">
+    <div class="container-characters">
+      <div class="card">
+        <div class="img-box">
+          <img alt="{{ character.name }}" src="{{ character.img }}" />
+        </div>
+        <div class="content-box">
+          <div class="content">
+            <p><b>Name:</b><br> <span>{{ character.name }}</span></p>
+            <p><b>Nickname:</b><br><span> {{ character.nickname }}</span></p>
+            <p><b>Portrayed by:</b> <br><span>{{ character.portrayed }}</span></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </a>
-
-

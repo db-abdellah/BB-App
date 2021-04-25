@@ -29,7 +29,10 @@ img {
     padding: 20px;
   padding: 10px 20px;
 }
-
+.loading-gif{
+  height: 100px !important;
+  margin-left: 45% !important;
+}
 @media (max-width:1000px){
   .character{
     display: flex;
