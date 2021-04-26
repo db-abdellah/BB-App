@@ -40,3 +40,9 @@ img {
     justify-content: center;
   }
 }
+
+.loading-gif{
+  height: 100px !important;
+  width: 100px !important;
+  margin-left: 45% !important;
+}

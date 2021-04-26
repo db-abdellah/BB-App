@@ -15,3 +15,6 @@ b{
     color:black ;
     padding-right:5px;
 }
+.container{
+    background-image: url(/assets/bg.jpg);
+}

@@ -41,6 +41,8 @@ img {
   height: 320px;
   margin: 15px;
   overflow:hidden ;
+  box-shadow: 1px 1px 9px 1px rgb(0 0 0 / 36%);
+
 }
 .container-characters .card .img-box,
 .container-characters .card .content-box {
@@ -59,7 +61,7 @@ img {
   object-fit: cover;
   object-position: 0 0;
 }
-.container-characters .card .content-box::before {
+.container-characters .card .before {
   content: "";
   position: absolute;
   left: 0;
@@ -74,7 +76,7 @@ img {
   transform: scaleX(0);
   transform-origin: left;
 }
-.container-characters .card:hover .content-box::before {
+.container-characters .card:hover .before {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
   transform-origin: left;

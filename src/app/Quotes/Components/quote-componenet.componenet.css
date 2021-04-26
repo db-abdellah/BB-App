@@ -1,4 +1,4 @@
-.quote {
+/* .quote {
   font-size: 16pt;
   text-align: center;
 }
@@ -11,4 +11,82 @@ p {
   margin-right: 200px;
   text-align: right;
   color:#79b473;
+} */
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+
+blockquote {
+	position: relative;
+	margin: 40px 0;
+	padding:30px 40px;
+  text-align: center;
+	font: italic 1.2rem var(--type-quote);
+	background: var(--quote-bg) no-repeat left / var(--quote-image-width);
+	border-radius: var(--border-rad);
+	border: 2px solid rgb(12 68 45 / 27%);
+	box-shadow: 2px 2px 4px hsl(0deg 0% 0% / 54%);
+  
+}
+
+@media (min-width: 768px) {
+	blockquote {
+		margin: 40px 60px;
+	}
+}
+
+
+blockquote::after {
+	content: "❝";
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	top: -2px;
+	transform: translate(-50%, -50%);
+	width: 1.3em;
+	height: 1.3em;
+	background: white;
+	box-shadow: 0 4px 5px -1px hsla(0 0% 0% / 20%);
+	border-radius: 999px;
+	display: grid;
+	place-content: center;
+	padding-top: .5em;
+	color: var(--accent-color);
+	font-size: 36px;
+	font-style: normal;
+	text-indent: 0;
+}
+
+.blockquote-author-image {
+    margin: 0 !important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: var(--quote-image-width);
+	height: 100%;
+	opacity: 0.75;
+	background: var(--accent-color) var(--image) no-repeat center / cover;
+	background-blend-mode: hard-light;
+	border-top-left-radius: var(--border-rad);
+	border-bottom-left-radius: var(--border-rad);
+}
+
+cite {
+	display: block;
+	margin-top: 30px;
+	text-indent: 0;
+	text-align: center;
+	font: bold .9rem var(--type-body);
+	text-transform: uppercase;
+	color:  var(--accent-color);
 }

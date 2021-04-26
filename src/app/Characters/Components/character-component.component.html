@@ -5,11 +5,22 @@
         <div class="img-box">
           <img alt="{{ character.name }}" src="{{ character.img }}" />
         </div>
-        <div class="content-box">
-          <div class="content">
-            <p><b>Name:</b><br> <span>{{ character.name }}</span></p>
-            <p><b>Nickname:</b><br><span> {{ character.nickname }}</span></p>
-            <p><b>Portrayed by:</b> <br><span>{{ character.portrayed }}</span></p>
+        <div class="before">
+          <div class="content-box">
+            <div class="content">
+              <p>
+                <b>Name:</b><br />
+                <span>{{ character.name }}</span>
+              </p>
+              <p>
+                <b>Nickname:</b><br /><span> {{ character.nickname }}</span>
+              </p>
+              <p>
+                <b>Portrayed by:</b> <br /><span>{{
+                  character.portrayed
+                }}</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
