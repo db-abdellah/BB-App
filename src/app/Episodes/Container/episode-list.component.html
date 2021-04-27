@@ -1,19 +1,21 @@
 <div *ngIf="seasons.length > 0">
   <a id="head"></a>
   <div class="list-of-seasons">
+    <h1 class="title">Seasons List:</h1>
+    <br>
     <div *ngFor="let season of seasons">
       <h2
-        class="episode-title"
-        [ngClass]="{ 'selected-season': season.number === showedSeason }"
+        class="episode-title selected-season"
+        [ngClass]="{ 'selected-season': season.number === selectedSeason }"
         (click)="showSeason(season.number)"
       >
-        <a href="./episodes#head"> Season {{ season.number }}</a>
+        Season {{ season.number }}
       </h2>
 
       <div class="Episodes-list">
-        <div *ngIf="season.number == showedSeason">
-          <ul>
-            <li *ngFor="let episode of season.episodes">
+        <div>
+          <ul [ngClass]="season.number == selectedSeason ? 'showing-episode':'hidden-episode' ">
+            <li  *ngFor="let episode of season.episodes">
               <a class="hidden-link" href="./episodes/{{ episode.episode_id }}">
                 <p>{{ episode.episode_id }} - {{ episode.title }}</p>
               </a>

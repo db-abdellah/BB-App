@@ -20,3 +20,9 @@ li{
 ul{
     list-style: disc;
 }
+.showing-episode{
+ display: block;   
+}
+.hidden-episode{
+    display: none;   
+   }

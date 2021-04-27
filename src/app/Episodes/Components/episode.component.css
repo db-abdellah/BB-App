@@ -11,3 +11,6 @@ p{
 b{
     padding-right: 10px;
 }
+button{
+    float: right;
+}

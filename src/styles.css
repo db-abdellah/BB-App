@@ -140,6 +140,8 @@ h4 {
 ::selection {
   background: #79b473;
   color:black;
+  background-clip: text;
+ -webkit-text-fill-color: black;
 }
 
 .title{

@@ -15,12 +15,15 @@ export class EpisodeListComponent implements OnInit {
   public seasons: Season[] = [];
   public showedSeason:number=1;
   public episodeSubscription$: Subscription;
+  public selectedSeason ;
 
 
   ngOnInit() {
     this.episodeSubscription$=this.episodeService.getAllEpisodes().subscribe((episodes) => {
       this.episodesList = episodes;
       this.sortEpisodesBySeason();
+      this.selectedSeason = this.seasons[0].number;
+
     },this.logError);
     
   }
@@ -36,7 +39,11 @@ export class EpisodeListComponent implements OnInit {
   }
 
   showSeason(seasonNumber:number){
-    this.showedSeason=seasonNumber;
+    if(seasonNumber == this.selectedSeason){
+      this.selectedSeason=0;
+      return;
+    }
+    this.selectedSeason=seasonNumber;
   }
   ngOnDestroy() {
     this.episodeSubscription$.unsubscribe();
