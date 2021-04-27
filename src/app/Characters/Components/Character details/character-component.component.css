@@ -1,6 +1,7 @@
-.character{
+.character {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 p {
@@ -8,41 +9,54 @@ p {
 }
 
 div.polaroid {
-  width: 300px;
-  background-color: white;
+  min-width: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
-  margin: 10px;
-  height: 250px;
-
+  margin: 0 10px;
+  height: fit-content;
+  
 }
 
 img {
-    border-radius: 5px;
-    height: 250px;
-    width: 300px;
-    object-fit: cover;
-    object-position: 0 0;
+  border-radius: 5px;
+  height: auto;
+  width: 300px;
+  object-fit: cover;
+  object-position: 0 0;
 }
 
 .character-details {
-    padding: 20px;
+  padding: 20px;
   padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
 }
-.loading-gif{
+.loading-gif {
   height: 100px !important;
   margin-left: 45% !important;
 }
-@media (max-width:1000px){
-  .character{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+@media (max-width: 950px) {
+  .character {
+    
+  }
+  div.polaroid  {
+    margin-bottom: 50px;
+    width: auto;
   }
 }
 
-.loading-gif{
+.loading-gif {
   height: 100px !important;
   width: 100px !important;
   margin-left: 45% !important;
+}
+button {
+  float: right;
+  align-self: flex-end;
+  width: 100px;
+}
+b {
+  color: #30472d;
 }

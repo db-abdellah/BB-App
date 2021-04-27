@@ -28,7 +28,7 @@ p {
 
 blockquote {
 	position: relative;
-	margin: 40px 0;
+	margin: 20px 0;
 	padding:30px 40px;
   text-align: center;
 	font: italic 1.2rem var(--type-quote);
@@ -36,6 +36,11 @@ blockquote {
 	border-radius: var(--border-rad);
 	border: 2px solid rgb(12 68 45 / 27%);
 	box-shadow: 2px 2px 4px hsl(0deg 0% 0% / 54%);
+	display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: space-evenly;
+	height: 250px;
   
 }
 

@@ -1,7 +1,7 @@
 <div *ngIf="quotesList.length>0" class="quote-list">
   <h1 class="title">Breaking Bad's Most Memorable Quotes:</h1>
   <br>
-  
+  <div class="quotes-container">
   <div *ngFor="let quote of quotesList">
     <quote-componenet [quote]="quote"></quote-componenet>
   </div>
@@ -11,3 +11,4 @@
   class="loading-gif"
   src="assets/loading.gif"
 />
+</div>

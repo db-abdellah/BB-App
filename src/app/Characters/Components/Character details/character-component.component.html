@@ -9,8 +9,8 @@
     <p><b>Occupation:</b> {{ character[0]?.occupation }}</p>
     <p><b>Birthday:</b> {{ (character[0]?.birthday=="Unkown" ? (character[0]?.birthday | date): "Unkown")  }}</p>
     <p><b>Status:</b> {{ character[0]?.status }}</p>
-  
+  <button (click)="goBack()">Go Back</button>
   </div>
 </div>
-<button (click)="goBack()">Go Back</button>
+
 <img *ngIf="character.length==0" class="loading-gif" src="assets/loading.gif">
