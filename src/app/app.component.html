@@ -1,13 +1,18 @@
 <nav>
-  <ul>
-    <li>
-      <a routerLink="/dashboard"><img src="assets/unnamed.png" /></a>
-    </li>
-    <li><a routerLink="./dashboard">Dashboard</a></li>
-    <li><a routerLink="./characters">Characters</a></li>
-    <li><a routerLink="./episodes">Episodes</a></li>
-    <li><a routerLink="./quotes">Quotes</a></li>
+  <div class="logo">
+  <a routerLink="/dashboard"><img src="assets/unnamed.png" /></a>
+</div>
+  <ul (window:resize)="onResize($event)">
+    <li (click)="toggleActive()"><a routerLink="./dashboard"><p>Dashboard</p></a></li>
+    <li (click)="toggleActive()"><a routerLink="./characters"><p>Characters</p></a></li>
+    <li (click)="toggleActive()"><a routerLink="./episodes"><p>Episodes</p></a></li>
+    <li (click)="toggleActive()"><a routerLink="./quotes"><p>Quotes</p></a></li>
   </ul>
+  <div (click)="mobileMenu()" class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
 </nav>
 <div class="container">
   <div>
